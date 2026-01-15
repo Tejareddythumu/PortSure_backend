@@ -8,12 +8,11 @@
 
     <!-- Spring Boot Parent -->
     <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.2.5</version>
-    <relativePath/>
-	</parent>
-
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.5</version>
+        <relativePath/>
+    </parent>
 
     <!-- Project Info -->
     <groupId>com.portsure</groupId>
@@ -30,7 +29,7 @@
     <!-- Dependencies -->
     <dependencies>
 
-        <!-- Spring Web -->
+        <!-- Spring Web (REST APIs + Embedded Tomcat) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -42,7 +41,7 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- Spring Security -->
+        <!-- Spring Security (NO manual version) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
@@ -81,19 +80,13 @@
             <scope>test</scope>
         </dependency>
 
-    
-      <dependency>
-        <groupId>org.springframework.security</groupId>
-        <artifactId>spring-security-core</artifactId>
-        <version>5.1.6.RELEASE</version>
-      </dependency>
     </dependencies>
 
     <!-- Build Configuration -->
     <build>
         <plugins>
 
-            <!-- FIXED Maven Compiler Plugin (Stable) -->
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

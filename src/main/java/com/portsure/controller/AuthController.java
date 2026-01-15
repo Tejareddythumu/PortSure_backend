@@ -1,22 +1,22 @@
 package com.portsure.controller;
 
-import com.portsure.dto.RegisterRequest;
-import com.portsure.service.UserService;
-import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
+import com.portsure.service.AuthService;
+import com.portsure.dto.RegisterRequest;
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/auth")
+@CrossOrigin(origins = "*")
 public class AuthController {
 
-    private final UserService userService;
+    private final AuthService authService;
 
-    public AuthController(UserService userService) {
-        this.userService = userService;
+    public AuthController(AuthService authService) {
+        this.authService = authService;
     }
 
     @PostMapping("/register")
-    public String register(@Valid @RequestBody RegisterRequest request) {
-        return userService.register(request);
+    public String register(@RequestBody RegisterRequest request) {
+        return authService.register(request);
     }
 }
